@@ -1,6 +1,6 @@
 @include('partials.header')
-
-<h3>Login Page</h3>
+<img src="yesss.jpeg" alt="" width="100" height="100">
+<h3 class="d-flex align-items-center justify-content-center"> Login Page</h3>
 <form action="/login/process" method="POST">
     @csrf
     
@@ -32,4 +32,3 @@
   </form>
 
   
-  @include('partials.footer')
