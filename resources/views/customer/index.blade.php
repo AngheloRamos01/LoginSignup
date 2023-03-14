@@ -2,8 +2,11 @@
 <x-nav/>
 
 @if(Session::has('success'))
-    {{session::get('success')}}
+  <div > <P>{{session::get('success')}}</P> </div>
 @endif
+
+
+
 <div class="overflow-hidden rounded-lg border border-gray-200  shadow-md m-5">
     <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 table table-dark table-hover">
       <thead class="bg-gray-50">

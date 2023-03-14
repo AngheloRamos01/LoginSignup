@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\Customer;
 
 class CustomerController extends Controller
@@ -18,6 +19,25 @@ class CustomerController extends Controller
         ->where("id", "=", $id)
         ->delete();
         
-        return redirect('/')->with('success','customer deleted');
+        return redirect('/')->with('success','Customer Data Deleted Successfully');
     }
+    
+    public function addUser(){
+        return view('customer.addCustomerUser');
+    }
+
+    public function save(Request $req){
+        $validated=$req->validate([
+            'lastName'=>'required',
+            'firstName'=>'required',
+            'email'=>'required',
+            'contactNumber'=>'required',
+            'address'=>'required'
+        ]);
+
+        $customer=Customer::create($validated);
+
+        return redirect("/");
+    }
+
 }

@@ -24,5 +24,9 @@ Route::post('/login/process',[UserController::class,'process']);
 Route::post('/store',[UserController::class,'store']);
 
 Route::get('/logout',[UserController::class,'logout']);
+Route::get('/delete/{id}',[CustomerController::class,'delete'])->middleware('auth');;
 
-Route::get('/delete/{id}',[CustomerController::class,'delete']);
+Route::get('/addUser',[CustomerController::class,'addUser']);
+Route::post('/save',[CustomerController::class,'save']);
+
+
